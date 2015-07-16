@@ -12,7 +12,7 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader?stage=1&optional=runtime' },
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader?optional=runtime&stage=1' },
       { test: /\.local$/, loader: 'style-loader!css-loader?module!less-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' }
     ]

@@ -5,20 +5,24 @@
   "scripts": {
     "start": "npm run webpack & npm run serve",
     "webpack": "npm run webpack:client & npm run webpack:server",
-    "webpack:client": "node_modules/.bin/webpack --watch --verbose --colors --display-error-details --config ./webpack/client.config.js",
-    "webpack:server": "node_modules/.bin/webpack --watch --verbose --colors --display-error-details --config ./webpack/server.config.js",
+    "webpack:client": "node_modules/.bin/webpack --watch --colors --config ./webpack/client.config.js",
+    "webpack:server": "node_modules/.bin/webpack --watch --colors --config ./webpack/server.config.js",
     "postinstall": "node_modules/.bin/webpack --verbose --colors --display-error-details --config ./webpack/server.config.js",
     "serve": "NODE_ENV=development node_modules/.bin/nodemon -q server/boot.js"
   },
   "author": "Jack Callister",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.5.4",
     "babel": "^5.2.16",
     "ejs": "^2.3.1",
+    "es6-promise": "^2.3.0",
     "express": "^4.12.4",
     "react": "^0.13.2",
     "react-router": "^0.13.3",
-    "redux": "^0.12.0"
+    "redux": "^0.12.0",
+    "redux-actions": "^0.7.0",
+    "redux-promise": "^0.5.0"
   },
   "devDependencies": {
     "babel-core": "^5.2.16",

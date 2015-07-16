@@ -11,6 +11,10 @@ class Books extends React.Component {
     this.props.addBook({ id: 3, title: 'Sapiens' });
   }
 
+  fetchBook() {
+    this.props.createBook();
+  }
+
   renderBooks() {
     return this.props.books.map((book) => {
       return (
@@ -27,7 +31,8 @@ class Books extends React.Component {
         <ul>
           {books}
         </ul>
-        <span onClick={e => this.addBook(e)}>Add a book</span>
+        <div><span onClick={e => this.addBook(e)}>Add a book</span></div>
+        <span onClick={e => this.fetchBook(e)}>Fetch a book</span>
       </div>
     );
   }

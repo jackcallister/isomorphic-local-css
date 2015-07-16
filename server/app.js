@@ -16,8 +16,17 @@ const data = {
   ]
 };
 
+const apiData = {
+  id: 2,
+  title: 'Iron War'
+};
+
 app.use('/favicon.ico', (req, res) => {
   return;
+});
+
+app.use('/api', (req, res) => {
+  res.json(apiData);
 });
 
 app.use('/', (req, res) => {
