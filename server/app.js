@@ -10,8 +10,14 @@ app.set('view engine', 'ejs');
 
 app.use('/scripts', express.static(path.join(__dirname, '../build/scripts')));
 
+const data = {
+  books: [
+    { id: 1, title: 'Game of Thrones' }
+  ]
+};
+
 app.use('/', (req, res) => {
-  render(res, {}, req.originalUrl);
+  render(req, res, data);
 });
 
 app.listen(port, () => {

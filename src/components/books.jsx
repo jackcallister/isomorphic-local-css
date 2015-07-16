@@ -1,20 +1,20 @@
 'use strict';
 
 import React from 'react';
-import Book from './book';
+import { bindActionCreators } from 'redux';
+import { Connector } from 'redux/react';
+import * as BooksActions from '../actions/books-actions';
 
 class Books extends React.Component {
 
   addBook() {
-    this.props.BooksActions.create({ id: 3, title: 'Sapiens' });
+    this.props.addBook({ id: 3, title: 'Sapiens' });
   }
 
   renderBooks() {
     return this.props.books.map((book) => {
       return (
-        <Book key={book.id}
-              title={book.title}
-              isbn={book.isbn} />
+        <li key={book.id}>{book.title}</li>
       )
     });
   }
@@ -33,4 +33,23 @@ class Books extends React.Component {
   }
 }
 
-export default Books;
+function select(state) {
+  return { books: state.books };
+}
+
+class BooksContainer extends React.Component {
+  render() {
+    return (
+      <Connector select={select}>
+        {({ books, dispatch }) =>
+          <Books books={books} {...bindActionCreators(BooksActions, dispatch)} />
+        }
+      </Connector>
+    );
+  }
+}
+
+export default BooksContainer;
+
+
+// o
