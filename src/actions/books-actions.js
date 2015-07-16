@@ -20,7 +20,7 @@ function createBook() {
   return (dispatch) => {
     createAsyncAction({
       dispatch: dispatch,
-      begin BEGIN_CREATING_BOOK,
+      begin: BEGIN_CREATING_BOOK,
       success: SUCCESS_CREATING_BOOK,
       error: ERROR_CREATING_BOOK,
       promise: createRemoteBook
