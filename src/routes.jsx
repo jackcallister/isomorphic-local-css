@@ -1,13 +1,14 @@
 'use strict';
 
 import React from 'react';
-import { Route } from 'react-router';
+import { Route, DefaultRoute } from 'react-router';
 import App from './components/app';
 import Books from './components/books';
 
 const routes = (
-  <Route component={App}>
-    <Route path="/" component={Books} />
+  <Route name='app' path='/' handler={App}>
+    <Route name='books' path="books" handler={Books} />
+    <DefaultRoute handler={Books} />
   </Route>
 )
 
