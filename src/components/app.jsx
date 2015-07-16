@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import { RouteHandler } from 'react-router';
+import { Provider } from 'redux/react';
 import Header from './header';
 
 class App extends React.Component {
@@ -10,7 +12,11 @@ class App extends React.Component {
       <main>
         <Header/>
 
-        {this.props.children}
+        <Provider redux={this.props.redux}>
+          {() =>
+            <RouteHandler />
+          }
+        </Provider>
       </main>
     )
   }
