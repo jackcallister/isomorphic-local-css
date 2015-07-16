@@ -2,7 +2,7 @@
 
 import { ADD_BOOK } from '../constants/books-constants';
 
-export default function books(state = [{ id: 1, title: 'Game of Thrones' }], action) {
+export default function books(state = [], action) {
 
   switch (action.type) {
 

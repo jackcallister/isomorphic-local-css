@@ -16,6 +16,10 @@ const data = {
   ]
 };
 
+app.use('/favicon.ico', (req, res) => {
+  return;
+});
+
 app.use('/', (req, res) => {
   render(req, res, data);
 });
