@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "webpack -w & npm run serve",
-    "serve": "node server/boot.js"
+    "start": "npm run webpack:dev & npm run serve",
+    "webpack:dev": "webpack --watch --config webpack/client.config.js & webpack --watch --config webpack/server.config.js",
+    "serve": "node server/boot.js",
+    "postinstall": "webpack --config webpack/client.config.js && webpack --config webpack/server.config.js"
   },
   "author": "Jack Callister",
   "license": "ISC",
